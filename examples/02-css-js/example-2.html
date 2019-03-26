@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lab 2: Example 2</title>
+
+    <!-- Drawing examples ... -->
+
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+</head>
+<body>
+    <h1>Drawing</h1>
+
+    <div class="wrapper">
+      <h2>SVG Example</h2>
+
+      <svg version="1.1"
+             baseProfile="full"
+             width="300" height="200"
+             xmlns="http://www.w3.org/2000/svg">
+          <rect width="100%" height="100%" fill="#dbdbdb" />
+          <circle cx="150" cy="100" r="90" fill="steelblue" />
+          <rect id="middle-line" width="260" height="40" x="20" y="80" fill="rgba(108, 29, 119, 0.74)" />
+      </svg>
+    </div>
+
+    <div class="wrapper">
+      <h2>Canvas Example</h2>
+      <canvas id="canvas" height="200"></canvas>
+    </div>
+
+    <script>
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        context.fillStyle = '#dbdbdb';
+        context.fillRect(0, 0, 300, 200);
+
+        var centerX = canvas.width / 2
+        var centerY = canvas.height / 2;
+        var radius = 90;
+
+        context.beginPath();
+        
+        context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+        context.fillStyle = 'steelblue';
+        context.fill();
+        // context.stroke();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ex 5: Columns</title>
+
+    
+    <style>
+        .container {
+            min-width: 310px;
+            max-width: 800px;
+            height: 400px;
+            margin: 50px auto
+        }
+    </style>
+</head>
+<body>
+    <div id="bar-chart" class="container"></div>
+
+
+    <script src="scripts/highcharts.js"></script>
+    <script>
+        // Ireland's pop data from nations.csv
+        var population_data = [3513974, 3534235, 3558430, 3576261, 3590386, 3608841, 3637510, 3674171, 3712696, 3754786, 3805174, 3866243, 3931947, 3996521, 4070262, 4159914, 4273591, 4398942, 4489544, 4535375, 4560155, 4576794, 4586897, 4598294, 4617225];
+
+
+        // Column chart
+        // https://www.highcharts.com/demo/column-basic
+        Highcharts.chart('bar-chart', 
+        {
+            chart: {
+                type: 'column',
+            },
+            title: {
+                text: 'Ireland\'s Population, 1990-2014'
+            },
+
+            subtitle: {
+                text: 'Source: nations.csv'
+            },
+
+            yAxis: {
+                title: {
+                    text: 'Population'
+                }
+            },
+
+            xAxis: {
+                title: {
+                    text: 'Year'
+                },
+                categories: ['1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014']
+            },
+            legend: {
+                // layout: 'vertical',
+                // align: 'right',
+                // verticalAlign: 'middle',
+                enabled: false
+            },
+
+            series: [{
+                name: 'Ireland',
+                data: population_data
+            }],
+            credits: {
+                enabled: false
+            }
+        });
+
+    </script>
+</body>
+</html>

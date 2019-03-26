@@ -1,0 +1,24 @@
+/* First example of a stylesheet */
+
+body{
+    padding: 40px; 
+    font-family: helvetica, arial, sans-serif;
+}
+
+h2, p{
+    color: #3f51b5;
+}
+
+h1{text-align: center;}
+
+.wrapper{
+    width: 600px;
+    margin-left: auto; 
+    margin-right: auto; 
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+#middle-line{
+    stroke: #fff;
+}

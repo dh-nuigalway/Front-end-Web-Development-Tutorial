@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Example 6: More JavaScript</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+</head>
+<body>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <h1>JavaScript objects, functions &amp; loops</h1>
+                <p>
+                    Outputs are being logged to the the <code>console</code>.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // array in JS
+        var countryArray = ['France', 'Ireland', 'England'];
+        console.log(countryArray);
+
+        /**
+         * given an index, return the appropriate
+         * element from countryArray
+         * @param  int index 
+         * @return string
+         */
+        function getArrayValue(index){
+            return countryArray[index];
+        }
+
+        // call a function, and add the result
+        // to a variable
+        var countryElement = getArrayValue(1);
+        console.log(countryElement);
+
+
+        // 
+        // ----------------------------
+        //  A JavaScript object
+        // ----------------------------
+        var aCountryObject = {
+            
+            name: 'France',
+
+            flagColors: ['red', 'white', 'blue'],
+
+            getName: function(prefix){
+                return prefix + this.name;
+            }
+
+        };
+
+        // log the object
+        console.log(aCountryObject);
+
+        // access a single property
+        console.log(aCountryObject.name);
+        
+        // call the object's function, and assign result to a variable
+        var sampleString = aCountryObject.getName('The country is: ');
+        console.log( sampleString );
+        
+        
+    
+
+        
+    </script>
+
+    <!-- examples of loops & conditional statements -->
+    <script src="scripts/example-6.js"></script>
+
+</body>
+</html>

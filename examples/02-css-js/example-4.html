@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ex 4: time-series</title>
+
+    
+    <style>
+        .container {
+            min-width: 310px;
+            max-width: 800px;
+            height: 400px;
+            margin: 50px auto
+        }
+    </style>
+</head>
+<body>
+    <div id="series-chart" class="container"></div>
+
+    <script src="scripts/highcharts.js"></script>
+    <script>
+
+        // Ireland's pop data from nations.csv
+        var ireland_population_data = {
+            name: 'Ireland',
+            data: [
+                3513974, 3534235, 3558430, 3576261, 3590386, 3608841, 3637510, 3674171, 3712696, 3754786, 3805174, 3866243, 3931947, 3996521, 4070262, 4159914, 4273591, 4398942, 4489544, 4535375, 4560155, 4576794, 4586897, 4598294, 4617225
+            ]
+        };
+
+
+        // line chart
+        // https://www.highcharts.com/demo/line-basic
+        Highcharts.chart('series-chart', 
+        {
+            title: {
+                text: 'Ireland\'s Population, 1990-2014'
+            },
+
+            subtitle: {
+                text: 'Source: nations.csv'
+            },
+
+            yAxis: {
+                title: {
+                    text: 'Population'
+                }
+            },
+
+            xAxis: {
+                title: {
+                    text: 'Year'
+                }
+            },
+            legend: {
+                // layout: 'vertical',
+                // align: 'right',
+                // verticalAlign: 'middle'
+                enabled: false
+            },
+
+            plotOptions: {
+                series: {                
+                    pointStart: 1990
+                }                
+            },
+
+            series: [
+                ireland_population_data
+            ]
+        });
+
+    
+
+    </script>
+</body>
+</html>

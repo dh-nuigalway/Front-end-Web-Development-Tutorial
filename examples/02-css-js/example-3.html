@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Example 3: JavaScript Intro</title>
+
+    <style>
+        .container {
+            min-width: 310px;
+            max-width: 800px;
+            height: 200px;
+            margin: 50px auto
+        }
+    </style>
+</head>
+<body>
+    <div id="first_example" class="container"></div>
+    
+
+    <script>
+        // variables in JS
+        var testString = 'This is some text';
+        var countryArray = ['France', 'Ireland', 'England'];
+        console.log(testString);
+        console.log(countryArray);
+        console.log('Index: 0', countryArray[0]);
+
+        // simple addition
+        var one = 1;
+        var two = 2;
+        console.log(one, two);
+
+        var total = one + two;  
+        console.log('Total: ', total);
+
+        // Take a reference to an HTML element
+        var container = document.getElementById('first_example');
+        console.log(container);
+        
+        // set the content of the HTML element
+        container.innerHTML = '<p>The total of ' + one + ' + ' + two + ' is: <strong>' + total + '</strong></p>';
+
+        // some variety in console outputs
+        console.warn('Aaaand...done');
+        console.error('Fake an error message in console');
+    </script>
+</body>
+</html>

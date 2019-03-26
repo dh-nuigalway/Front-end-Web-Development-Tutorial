@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Example 3: More JavaScript</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">Lab 3</a>     
+
+      <div>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">All Examples <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>            
+      </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+               <div id="series-chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="scripts/highcharts.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            $.get('data/population.json', function(data){
+                
+                console.log(data);
+                
+                Highcharts.chart('series-chart', 
+                {
+                    title: {
+                        text: 'Ireland\'s Population, 1990-2014'
+                    },
+                    subtitle: {
+                        text: 'Source: nations.csv'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Population'
+                        }
+                    },
+                    xAxis: {
+                        title: {
+                            text: 'Year'
+                        }
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    plotOptions: {
+                        series: {                
+                            pointStart: 1990
+                        }                
+                    },
+              
+                    series:   data                           
+                    
+                });
+            });
+        });
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+/* First example of a stylesheet */
+
+body{
+    padding: 40px; 
+    font-family: helvetica, arial, sans-serif;
+}
+
+h2{
+    color: #3f51b5;
+}
+
+.wrapper{
+    width: 600px;
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+#video-wrapper{
+    margin-top: 20px;
+}
+
+#map-wrapper{ 
+    margin-top: 80px; 
+}
